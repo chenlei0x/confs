@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tar Pcf plugs.tar ~/.vim/
+tar Pczf plugs.tar ~/.vim/

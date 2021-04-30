@@ -1,1 +1,1 @@
-tar xfP plugs.tar
+tar xzfP plugs.tar
