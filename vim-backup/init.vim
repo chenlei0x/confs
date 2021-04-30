@@ -289,6 +289,7 @@ nnoremap <leader><leader>vg :vimgrep  /<C-R>=expand("<cword>")<CR>/j %<cr>
 
 nnoremap <c-p> :Files<cr>
 nnoremap <M-t> :BTags<cr>
+nnoremap <M-r> :BTags <C-R>=expand("<cword>")<cr><cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "book mark plugin
