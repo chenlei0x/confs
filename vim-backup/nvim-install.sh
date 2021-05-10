@@ -1,6 +1,8 @@
 #!/bin/bash
 
+chmod a+x ./nvim.appimage
 ./nvim.appimage --appimage-extract
+chmod a-x ./nvim.appimage
 
 target_dir=/opt/nvim
 if [ -d $target_dir ]
