@@ -8,7 +8,6 @@ local def_map = {
     -- Vim map
     ["n|<c-q>"] = map_cr("bdelete"):with_noremap():with_silent(),
     ["n|<C-s>"] = map_cu("write"):with_noremap(),
-    ["n|Y"] = map_cmd("y$"),
 
     -- when searching， zz makes cursor line in the middle
     ["n|n"] = map_cmd("nzzzv"):with_noremap(),
@@ -35,6 +34,7 @@ local def_map = {
     -- window
     ["n|<leader>s"] = map_cr("split"):with_silent(),
     ["n|<leader>v"] = map_cr("vsplit"):with_silent(),
+    ["n|<leader>wc"] = map_cmd("<c-w>c"):with_silent():with_noremap(),
 
     -- Insert
     -- ["i|<C-u>"] = map_cmd("<C-G>u<C-U>"):with_noremap(),
