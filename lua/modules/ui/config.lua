@@ -10,56 +10,6 @@ function config.edge()
     vim.g.edge_transparent_background = 1
 end
 
-function config.catppuccin()
-    require('catppuccin').setup({
-        transparent_background = false,
-        term_colors = true,
-        styles = {
-            comments = "italic",
-            functions = "italic,bold",
-            keywords = "italic",
-            strings = "NONE",
-            variables = "NONE"
-        },
-        integrations = {
-            treesitter = true,
-            native_lsp = {
-                enabled = true,
-                virtual_text = {
-                    errors = "italic",
-                    hints = "italic",
-                    warnings = "italic",
-                    information = "italic"
-                },
-                underlines = {
-                    errors = "underline",
-                    hints = "underline",
-                    warnings = "underline",
-                    information = "underline"
-                }
-            },
-            lsp_trouble = true,
-            lsp_saga = true,
-            gitgutter = false,
-            gitsigns = true,
-            telescope = true,
-            nvimtree = {enabled = true, show_root = true},
-            which_key = true,
-            indent_blankline = {enabled = true, colored_indent_levels = false},
-            dashboard = true,
-            neogit = false,
-            vim_sneak = false,
-            fern = false,
-            barbar = false,
-            bufferline = true,
-            markdown = true,
-            lightspeed = false,
-            ts_rainbow = true,
-            hop = true
-        }
-    })
-end
-
 function config.lualine()
     local gps = require("nvim-gps")
 
@@ -85,7 +35,6 @@ function config.lualine()
     require("lualine").setup {
         options = {
             icons_enabled = true,
-            theme = "catppuccin",
             disabled_filetypes = {},
             component_separators = "|",
             section_separators = {left = "", right = ""}
@@ -97,15 +46,6 @@ function config.lualine()
                 {"lsp_progress"}, {gps_content, cond = gps.is_available}
             },
             lualine_x = {
-                {
-                    "diagnostics",
-                    sources = {"nvim_lsp"},
-                    color_error = "#BF616A",
-                    color_warn = "#EBCB8B",
-                    color_info = "#81A1AC",
-                    color_hint = "#88C0D0",
-                    symbols = {error = " ", warn = " ", info = " "}
-                }
             },
             lualine_y = {"filetype", "encoding", "fileformat"},
             lualine_z = {"progress", "location"}
@@ -194,9 +134,8 @@ end
 function config.nvim_bufferline()
     require("bufferline").setup {
         options = {
-            number = "none",
+            numbers = "buffer_id",
             modified_icon = "✥",
-            buffer_close_icon = "",
             left_trunc_marker = "",
             right_trunc_marker = "",
             max_name_length = 14,
@@ -205,7 +144,6 @@ function config.nvim_bufferline()
             show_buffer_close_icons = true,
             show_buffer_icons = true,
             show_tab_indicators = true,
-            diagnostics = "nvim_lsp",
             always_show_bufferline = true,
             separator_style = "thin",
             offsets = {
@@ -220,78 +158,8 @@ function config.nvim_bufferline()
     }
 end
 
-function config.gitsigns()
-    require("gitsigns").setup {
-        signs = {
-            add = {
-                hl = 'GitSignsAdd',
-                text = '│',
-                numhl = 'GitSignsAddNr',
-                linehl = 'GitSignsAddLn'
-            },
-            change = {
-                hl = 'GitSignsChange',
-                text = '│',
-                numhl = 'GitSignsChangeNr',
-                linehl = 'GitSignsChangeLn'
-            },
-            delete = {
-                hl = 'GitSignsDelete',
-                text = '_',
-                numhl = 'GitSignsDeleteNr',
-                linehl = 'GitSignsDeleteLn'
-            },
-            topdelete = {
-                hl = 'GitSignsDelete',
-                text = '‾',
-                numhl = 'GitSignsDeleteNr',
-                linehl = 'GitSignsDeleteLn'
-            },
-            changedelete = {
-                hl = 'GitSignsChange',
-                text = '~',
-                numhl = 'GitSignsChangeNr',
-                linehl = 'GitSignsChangeLn'
-            }
-        },
-        keymaps = {
-            -- Default keymap options
-            noremap = true,
-            buffer = true,
-            ["n ]g"] = {
-                expr = true,
-                '&diff ? \']g\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\''
-            },
-            ["n [g"] = {
-                expr = true,
-                '&diff ? \'[g\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\''
-            },
-            ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-            ["v <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-            ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-            ["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-            ["v <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-            ["n <leader>hR"] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-            ["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-            ["n <leader>hb"] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
-            -- Text objects
-            ["o ih"] = ':<C-U>lua require"gitsigns".text_object()<CR>',
-            ["x ih"] = ':<C-U>lua require"gitsigns".text_object()<CR>'
-        },
-        watch_gitdir = {interval = 1000, follow_files = true},
-        current_line_blame = true,
-        current_line_blame_opts = {delay = 1000, virtual_text_pos = "eol"},
-        sign_priority = 6,
-        update_debounce = 100,
-        status_formatter = nil, -- Use default
-        word_diff = false,
-        diff_opts = {internal = true}
-    }
-end
-
 function config.indent_blankline()
-    vim.opt.termguicolors = true
-    vim.opt.list = true
+    vim.opt.listchars:append("eol:↴")
     require("indent_blankline").setup {
         char = "│",
         show_first_indent_level = true,

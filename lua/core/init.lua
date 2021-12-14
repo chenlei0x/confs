@@ -43,8 +43,12 @@ local disable_distribution_plugins = function()
     vim.g.loaded_netrwFileHandlers = 1
 end
 
+local set_sqlite_so_path = function()
+    vim.g.sqlite_clib_path = "/usr/lib64/libsqlite3.so.0"
+end
+
 local leader_map = function()
-    vim.g.mapleader = ","
+    vim.g.mapleader = " "
     vim.api.nvim_set_keymap("n", " ", "", {noremap = true})
     vim.api.nvim_set_keymap("x", " ", "", {noremap = true})
 end
@@ -88,56 +92,31 @@ local dashboard_config = function()
     }
 
     vim.g.dashboard_custom_section = {
-        change_colorscheme = {
-            description = {" Scheme change              comma s c "},
-            command = "DashboardChangeColorscheme"
-        },
         find_frecency = {
-            description = {" File frecency              comma f r "},
+            description = {" File frecency              space f r "},
             command = "Telescope frecency"
         },
         find_history = {
-            description = {" File history               comma f e "},
+            description = {" File history               space f e "},
             command = "DashboardFindHistory"
         },
-        find_project = {
-            description = {" Project find               comma f p "},
-            command = "Telescope project"
-        },
         find_file = {
-            description = {" File find                  comma f f "},
+            description = {" File find                  space f f "},
             command = "DashboardFindFile"
         },
         file_new = {
-            description = {" File new                   comma f n "},
+            description = {" File new                   space f n "},
             command = "DashboardNewFile"
         },
         find_word = {
-            description = {" Word find                  comma f w "},
+            description = {" Word find                  space f w "},
             command = "DashboardFindWord"
         }
     }
 end
 
-local clipboard_settings = function()
-    vim.cmd [[
-    let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': 'win32yank.exe -i --crlf',
-          \      '*': 'win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': 'win32yank.exe -o --lf',
-          \      '*': 'win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
-
-    ]]
-end
-
 local load_core = function()
+    set_sqlite_so_path()
     local pack = require("core.pack")
     createdir()
     disable_distribution_plugins()
@@ -154,7 +133,7 @@ local load_core = function()
     require("core.event")
     pack.load_compile()
 
-    vim.cmd [[colorscheme catppuccin]]
+    vim.cmd [[colorscheme edge]]
 end
 
 load_core()

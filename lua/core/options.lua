@@ -15,7 +15,7 @@ end
 local function load_options()
     local global_local = {
         termguicolors = true,
-        mouse = "a",
+        mouse = "",
         errorbells = true,
         visualbell = true,
         hidden = true,
@@ -72,8 +72,6 @@ local function load_options()
         sidescrolloff = 5,
         foldlevelstart = 99,
         ruler = true,
-        cursorline = true,
-        cursorcolumn = true,
         list = true,
         showtabline = 2,
         winwidth = 30,
@@ -82,7 +80,7 @@ local function load_options()
         helpheight = 12,
         previewheight = 12,
         showcmd = false,
-        cmdheight = 2,
+        cmdheight = 1,
         cmdwinheight = 5,
         equalalways = false,
         laststatus = 2,

@@ -116,7 +116,6 @@ lsp_installer.on_server_ready(function(server)
     opts.capabilities = capabilities
     opts.flags = {debounce_text_changes = 500}
     opts.on_attach = custom_attach
-
     server:setup(opts)
 end)
 
@@ -129,6 +128,12 @@ nvim_lsp.html.setup {
     },
     settings = {},
     single_file_support = true,
+    flags = {debounce_text_changes = 500},
+    capabilities = capabilities,
+    on_attach = custom_attach
+}
+
+nvim_lsp.clangd.setup {
     flags = {debounce_text_changes = 500},
     capabilities = capabilities,
     on_attach = custom_attach
