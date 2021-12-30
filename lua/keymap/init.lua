@@ -77,6 +77,7 @@ local plug_map = {
         :with_silent(),
     ["n|<Leader>fc"] = map_cu("Telescope current_buffer_fuzzy_find"):with_noremap()
         :with_silent(),
+    ["n|<Leader>fm"] = map_cu("DashboardJumpMarks"):with_noremap():with_silent(),
 
     -- Plugin accelerate-jk
     ["n|j"] = map_cmd("v:lua.enhance_jk_move('j')"):with_silent():with_expr(),
@@ -86,7 +87,7 @@ local plug_map = {
     ["n|<leader>hl"] = map_cu("HopLine"):with_noremap(),
     ["n|<leader>hh"] = map_cu("HopChar1"):with_noremap(),
     ["n|<leader>hs"] = map_cu("HopChar2"):with_noremap(),
-    
+
     -- Plugin SymbolsOutline
     ["n|<A-t>"] = map_cr("SymbolsOutline"):with_noremap():with_silent(),
     -- Plugin split-term

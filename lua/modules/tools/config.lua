@@ -77,6 +77,7 @@ function config.telescope()
     }
 
     require("telescope").load_extension("frecency")
+    require("telescope").load_extension("fzf")
 end
 
 function config.sniprun()
@@ -114,4 +115,7 @@ call wilder#set_option('renderer', wilder#renderer_mux({':': wilder#popupmenu_re
 ]]
 end
 
+function config.surround()
+    require"surround".setup{}
+end
 return config

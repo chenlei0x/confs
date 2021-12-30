@@ -131,6 +131,7 @@ local load_core = function()
     require("core.mapping")
     require("keymap")
     require("core.event")
+    require("core.cscope")
     pack.load_compile()
 
     vim.cmd [[colorscheme edge]]

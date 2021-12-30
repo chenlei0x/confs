@@ -2,17 +2,13 @@ local editor = {}
 local conf = require("modules.editor.config")
 
 editor["junegunn/vim-easy-align"] = {opt = true, cmd = "EasyAlign"}
-editor["itchyny/vim-cursorword"] = {
-    opt = true,
-    event = {"BufReadPre", "BufNewFile"},
-    config = conf.vim_cursorwod
-}
 
 editor["simrat39/symbols-outline.nvim"] = {
     opt = true,
     cmd = {"SymbolsOutline", "SymbolsOutlineOpen"},
     config = conf.symbols_outline
 }
+
 editor["nvim-treesitter/nvim-treesitter"] = {
     opt = true,
     run = ":TSUpdate",
@@ -69,4 +65,10 @@ editor["norcalli/nvim-colorizer.lua"] = {
 }
 
 editor["jdhao/better-escape.vim"] = {opt = true, event = "InsertEnter"}
+
+editor["RRethy/vim-illuminate"] = {
+    opt = true,
+    config = conf.vim_illuminate
+}
+
 return editor

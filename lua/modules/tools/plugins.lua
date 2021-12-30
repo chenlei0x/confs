@@ -38,6 +38,10 @@ tools["gelguy/wilder.nvim"] = {
 }
 
 
-tools["blackCauldron7/surround.nvim"] = {opt = false}
+tools["blackCauldron7/surround.nvim"] = {
+    opt = false,
+    config = conf.surround,
+}
+tools["nvim-telescope/telescope-fzf-native.nvim"] = {opt = false, run = 'make'}
 
 return tools
