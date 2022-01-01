@@ -76,6 +76,16 @@ function autocmd.load_autocmds()
                 "TextYankPost", "*",
                 [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=300})]]
             }
+        },
+        shebang = {
+            {
+                "BufNewFile" ,"*.py",
+                [[:execute "normal! i#!/usr/bin/env python3\<cr>#-*- coding: utf-8 -*-\<cr>\<cr>"]]
+            },
+            {
+                "BufNewFile", "*.sh", 
+                [[:execute "normal! i#!/bin/bash\<cr>"]]
+            },
         }
     }
 

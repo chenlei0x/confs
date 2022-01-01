@@ -7,15 +7,15 @@ end
 
 local function cs_find_cword_def()
     local current_word = get_symbol()
-    vim.cmd("cs find g " .. current_word)
+    vim.cmd("lcs find g " .. current_word)
 end
 
 local function cs_find_cword_ref()
     local current_word = get_symbol()
-    vim.cmd("cs find s " .. current_word)
+    vim.cmd("lcs find s " .. current_word)
 end
 
 return {
     cs_find_cword_def = cs_find_cword_def,
-    cs_find_cword_ref = cs_find_cword_ref
+    cs_find_cword_ref = cs_find_cword_ref,
 }

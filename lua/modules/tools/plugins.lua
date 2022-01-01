@@ -37,11 +37,6 @@ tools["gelguy/wilder.nvim"] = {
     requires = {{"romgrk/fzy-lua-native", after = "wilder.nvim"}}
 }
 
-
-tools["blackCauldron7/surround.nvim"] = {
-    opt = false,
-    config = conf.surround,
-}
 tools["nvim-telescope/telescope-fzf-native.nvim"] = {opt = false, run = 'make'}
 
 return tools

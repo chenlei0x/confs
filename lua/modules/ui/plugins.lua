@@ -24,5 +24,6 @@ ui["akinsho/nvim-bufferline.lua"] = {
 -- colortheme
 ui["sainnhe/edge"] = {opt = false, config = conf.edge}
 
+ui["ellisonleao/gruvbox.nvim"] = {opt = false, requires = {"rktjmp/lush.nvim"}}
 
 return ui

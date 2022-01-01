@@ -51,13 +51,11 @@ editor["phaazon/hop.nvim"] = {
     end
 }
 
-editor["vimlab/split-term.vim"] = {opt = true, cmd = {"Term", "VTerm"}}
 editor["akinsho/nvim-toggleterm.lua"] = {
-    opt = true,
-    event = "BufRead",
+    opt = false,
     config = conf.toggleterm
 }
-editor["numtostr/FTerm.nvim"] = {opt = true, event = "BufRead"}
+editor["numtostr/FTerm.nvim"] = {opt = false}
 editor["norcalli/nvim-colorizer.lua"] = {
     opt = true,
     event = "BufRead",
@@ -71,4 +69,18 @@ editor["RRethy/vim-illuminate"] = {
     config = conf.vim_illuminate
 }
 
+editor["jlanzarotta/bufexplorer"] = {
+    opt = false,
+}
+
+editor["blackCauldron7/surround.nvim"] = {
+    opt = false,
+    config = function () require"surround".setup {mappings_style = "sandwich"} end
+}
+
+
+editor["numToStr/Comment.nvim"] = {
+    opt = false,
+    config = function() require('Comment').setup() end
+}
 return editor

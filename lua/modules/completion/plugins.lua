@@ -19,7 +19,7 @@ completion["hrsh7th/nvim-cmp"] = {
         {"saadparwaiz1/cmp_luasnip", after = "LuaSnip"},
         {"hrsh7th/cmp-nvim-lsp", after = "cmp_luasnip"},
         {"hrsh7th/cmp-nvim-lua", after = "cmp-nvim-lsp"},
-        {"andersevenrud/compe-tmux", branch = "cmp", after = "cmp-nvim-lua"},
+        {"andersevenrud/compe-tmux", branch = "compe", after = "cmp-nvim-lua"},
         {"hrsh7th/cmp-path", after = "compe-tmux"},
         {"f3fora/cmp-spell", after = "cmp-path"},
         {"hrsh7th/cmp-buffer", after = "cmp-spell"},

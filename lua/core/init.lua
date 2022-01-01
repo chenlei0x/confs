@@ -1,5 +1,6 @@
 local global = require "core.global"
 local vim = vim
+local highlight = require "core.highlight"
 
 -- Create cache dir and subs dir
 local createdir = function()
@@ -133,8 +134,8 @@ local load_core = function()
     require("core.event")
     require("core.cscope")
     pack.load_compile()
-
-    vim.cmd [[colorscheme edge]]
+    vim.cmd [[colorscheme gruvbox]]
+    -- highlight.prepare_hl_groups()
 end
 
 load_core()
