@@ -8,7 +8,7 @@ local def_map = {
     -- Vim map
     ["n|<A-d>"] = map_cr("bdelete"):with_noremap():with_silent(),
     ["n|<A-D>"] = map_cr("bdelete!"):with_noremap():with_silent(),
-    ["n|<leader>bw"] = map_cr("bwipe"):with_noremap():with_silent(),
+    ["n|<A-B>"] = map_cr("bwipe"):with_noremap():with_silent(),
     ["n|<leader>l"] = map_cr("write"):with_noremap():with_silent(),
 
     -- when searching， zz makes cursor line in the middle
