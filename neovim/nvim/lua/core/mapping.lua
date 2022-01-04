@@ -26,14 +26,14 @@ local def_map = {
 
     --tab
     ["n|<leader>tn"] = map_cr("tabnew"):with_silent(),
-    ["n|<leader>tc"] = map_cr("tabclose"):with_silent(),
-    ["n|<leader>u"] = map_cr("tabp"):with_silent(),
-    ["n|<leader>i"] = map_cr("tabn"):with_silent(),
+    ["n|<A-t>"] = map_cr("tabclose"):with_silent(),
+    ["n|<A-,>"] = map_cr("tabp"):with_silent(),
+    ["n|<A-.>"] = map_cr("tabn"):with_silent(),
     ["n|<leader>tt"] = map_cr("tabe %"):with_silent(),
     -- window
     ["n|<leader>s"] = map_cr("split"):with_silent(),
     ["n|<leader>v"] = map_cr("vsplit"):with_silent(),
-    ["n|<leader>w"] = map_cmd("<c-w>c"):with_silent():with_noremap(),
+    ["n|<A-w>"] = map_cmd("<c-w>c"):with_silent():with_noremap(),
     ["n|<TAB>"] = map_cmd("<c-w>w"):with_silent():with_noremap(),
 
     -- command line
