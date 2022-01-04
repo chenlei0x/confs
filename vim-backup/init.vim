@@ -62,15 +62,15 @@ set sw=4
 nnoremap <Leader>p /[\'"\])}>]<CR>:noh<CR>a
 
 "window operations
-nnoremap <Leader>wc <c-w>c
+nnoremap <Leader>w <c-w>c
 nnoremap <Leader>v <c-w>v<c-w>l
 nnoremap <Leader>s <c-w>s<c-w>j
 nnoremap <c-b>o <nop>
 nnoremap <C-w>o <Nop>
 
 
-nnoremap <F3> :cprev<CR>zz
-nnoremap <F4> :cnext<CR>zz
+nnoremap <M-k> :lprev<CR>zz
+nnoremap <M-j> :lnext<CR>zz
 nmap <C-t> :colder<CR>:cc<CR>
 
 "page up-donw
@@ -246,7 +246,7 @@ func! CompileRunGcc()
 endfunc
 
 
-nnoremap <leader>j <c-w>w
+nnoremap <tab> <c-w>w
 nnoremap <leader>l :w<cr>
 
 nnoremap <up> <c-y>
@@ -255,8 +255,8 @@ nnoremap <down> <c-e>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
-nnoremap <leader>- :cclose<cr>
-nnoremap <leader>= :copen<cr>
+nnoremap <leader>- :lclose<cr>
+nnoremap <leader>= :lopen<cr>
 
 
 if has("cscope")
@@ -276,12 +276,12 @@ if has("cscope")
 	set csverb
 endif
 
-nnoremap <leader><leader>g :cs f g 
-nnoremap <leader><leader>s :cs f s 
-nnoremap <leader><leader>t :cs f t 
-nnoremap <leader><leader>f :cs f f 
-nmap <leader>cs :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>cg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader><leader>g :lcs f g 
+nnoremap <leader><leader>s :lcs f s 
+nnoremap <leader><leader>t :lcs f t 
+nnoremap <leader><leader>f :lcs f f 
+nmap <leader>cs :lcs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>cg :lcs find g <C-R>=expand("<cword>")<CR><CR>
 
 nnoremap <leader><leader>vg :vimgrep  /<C-R>=expand("<cword>")<CR>/j %<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
