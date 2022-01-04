@@ -6,7 +6,9 @@ alias bker="HOME=/data ./generate-rpms.sh  -j20 -t"
 alias gs="git status"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-PATH=$PATH:/opt/tmux/bin:/opt/nvim/usr/bin/:/opt/qemu-5.0.0/bin
+PATH=$PATH:/opt/tmux/:/opt/nvim/:/opt/qemu-5.0.0/bin
 
 export PATH="$PATH:$HOME/.ft"
 alias ggg="scl enable devtoolset-8 zsh"
+alias v=nvim
+alias vim=nvim
