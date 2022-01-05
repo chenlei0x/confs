@@ -90,7 +90,7 @@ local function load_options()
         pumblend = 10,
         winblend = 10,
         autoread = true,
-        autowrite = true
+        autowrite = false
     }
 
     local bw_local = {
@@ -114,10 +114,6 @@ local function load_options()
         concealcursor = "niv"
     }
 
-    local cscope_options = {
-        cscopequickfix="s-,c-,d-,i-,t-,e-"
-    }
-
     if global.is_mac then
         vim.g.clipboard = {
             name = "macOS-clipboard",
@@ -130,7 +126,6 @@ local function load_options()
     end
     for name, value in pairs(global_local) do vim.o[name] = value end
     bind_option(bw_local)
-    bind_option(cscope_options)
 end
 
 load_options()
