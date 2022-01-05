@@ -19,7 +19,9 @@ local function try_to_add_cscope_db()
     vim.api.nvim_exec([[
         set csto=0
         set cst
-        cs add cscope.out
+        if filereadable("cscope.out")
+            cs add cscope.out
+        endif
         set csverb
     ]], true)
 end
