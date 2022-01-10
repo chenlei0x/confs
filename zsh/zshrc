@@ -1,6 +1,6 @@
 
 alias tmux="tmux -2"
-export EDITOR=vim
+export EDITOR=nvim
 alias cdrpm="cd /data/rpmbuild/RPMS/x86_64"
 alias bker="HOME=/data ./generate-rpms.sh  -j20 -t"
 alias gs="git status"
