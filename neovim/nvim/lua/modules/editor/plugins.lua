@@ -65,8 +65,7 @@ editor["norcalli/nvim-colorizer.lua"] = {
 editor["jdhao/better-escape.vim"] = {opt = true, event = "InsertEnter"}
 
 editor["RRethy/vim-illuminate"] = {
-    opt = true,
-    config = conf.vim_illuminate
+    opt = false,
 }
 
 editor["jlanzarotta/bufexplorer"] = {

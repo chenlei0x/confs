@@ -202,8 +202,4 @@ function config.toggleterm()
     }
 end
 
-function config.vim_illuminate()
-    require("vim-illuminate").setup{}
-end
-
 return config
