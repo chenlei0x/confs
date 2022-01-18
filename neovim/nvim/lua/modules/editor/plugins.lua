@@ -34,7 +34,7 @@ editor["SmiteshP/nvim-gps"] = {
     after = "nvim-treesitter",
     config = conf.nvim_gps
 }
-editor["rhysd/accelerated-jk"] = {opt = true}
+editor["rhysd/accelerated-jk"] = {opt = false}
 editor["romainl/vim-cool"] = {
     opt = true,
     event = {"CursorMoved", "InsertEnter"}
