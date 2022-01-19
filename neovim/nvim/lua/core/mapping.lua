@@ -54,8 +54,8 @@ local def_map = {
     ["n|<F4>"] = map_cr("lnext"):with_noremap(),
 
     -- cscope
-    ["n|<leader><leader>s"] = map_cmd(":cs f s "):with_noremap(),
-    ["n|<leader><leader>g"] = map_cmd(":cs f g "):with_noremap(),
+    ["n|<leader><leader>s"] = map_cmd(":lcs f s "):with_noremap(),
+    ["n|<leader><leader>g"] = map_cmd(":lcs f g "):with_noremap(),
     ["n|<leader>cg"] = map_cr('lua require("core.cscope"):cs_find_cword_def()'):with_noremap():with_silent(),
     ["n|<leader>cs"] = map_cr('lua require("core.cscope"):cs_find_cword_ref()'):with_noremap():with_silent(),
 
